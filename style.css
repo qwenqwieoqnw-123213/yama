@@ -1,0 +1,559 @@
+/* Reset */
+body, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* General */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Barra principal */
+/* Header General */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: 120px;
+}
+
+.logo-img {
+  width: 100%;
+  height: auto;
+}
+
+/* Navegación */
+.main-nav {
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
+}
+
+.nav-links li a {
+  color: #000;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+
+}
+
+
+
+.nav-links li a:hover {
+  background-color: #f4f4f4;
+  color: #ff0000;
+  
+  
+}
+
+/* Menú Hamburguesa */
+.hamburger {
+  display: none; /* Oculto en pantallas grandes */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .nav-links {
+      display: none; /* Oculta el menú */
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #ffffff;
+      width: 90vw;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 0px;
+  }
+
+  .nav-links li a:hover{
+  padding: 5% 90%;
+  }
+
+  .nav-links li {
+      text-align: center;
+  }
+
+  .nav-links.show {
+      display: flex; /* Muestra el menú cuando está activo */
+  }
+
+  .hamburger {
+      display: flex; /* Muestra el menú hamburguesa */
+  }
+}
+
+
+/* Barra secundaria */
+
+.secondary-nav {
+  background-color: #ff0000;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.secondary-nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 15px;
+}
+
+.secondary-nav-links li a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.secondary-nav-links li a:hover {
+  background-color: #f4f4f4;
+  color: #ff0000;
+}
+
+/* Estilos para el menú hamburguesa */
+.hamburger-secondary {
+  display: none; /* Ocultar en escritorio */
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1000;
+}
+
+.hamburger-secondary span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .secondary-nav{
+    height: 20px;
+
+  }
+
+  .secondary-nav-links {
+      display: none; /* Oculta el menú por defecto */
+      flex-direction: column;
+      background-color: #ff0000;
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .secondary-nav-links.show-secondary {
+      display: flex; /* Mostrar el menú cuando está activo */
+  }
+
+  .secondary-nav-links li {
+      text-align: center;
+  }
+
+  .hamburger-secondary {
+      display: flex; /* Mostrar el ícono hamburguesa en móviles */
+  }
+
+  /* Animación del ícono hamburguesa */
+  .hamburger-secondary.active-secondary span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger-secondary.active-secondary span:nth-child(2) {
+      opacity: 0;
+  }
+
+  .hamburger-secondary.active-secondary span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+
+
+/* Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal */
+/* Contenedor principal */
+.marquee-container {
+    width: 100%;
+    background-color: #ffffff; /* Fondo similar al ejemplo */
+    overflow: hidden; /* Oculta el texto fuera de los bordes */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    border: 1px solid #ffffff;
+    position: relative;
+}
+
+/* Animación de texto */
+.marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 15s linear infinite;
+}
+
+.marquee span {
+    display: inline-block;
+    color: #c2185b; /* Color del texto (similar al ejemplo) */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Definición de la animación */
+@keyframes scroll {
+    0% {
+        transform: translateX(0); /* Comienza desde el inicio */
+    }
+    100% {
+        transform: translateX(-50%); /* Se desplaza hasta la mitad */
+    }
+}
+
+/* Banner superior */
+.banner-container {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.banner {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-text, .right-text {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.whatsapp-button {
+    background-color: #25D366;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #1DA851;
+}
+
+.whatsapp-button .fa-whatsapp {
+    font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+  .left-text, .right-text {
+    font-size: 10px;
+    width: 20%;
+  }
+}
+
+
+/* Imagen principal */
+
+/* Estilo general del carrusel */
+.carousel {
+  position: relative;
+  width: 100%; /* El carrusel ocupa todo el ancho del contenedor */
+  max-width: 100%; /* Limita el ancho máximo del carrusel */
+  margin: 0 auto; /* Centra el carrusel horizontalmente */
+  overflow: hidden;
+  border-radius: 0px; /* Bordes redondeados opcionales */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para un efecto más elegante */
+}
+
+/* Contenedor de las imágenes */
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Cada imagen del carrusel */
+.carousel-image {
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  flex: 0 0 100%; /* Cada imagen ocupa exactamente el 100% del contenedor */
+  object-fit: cover; /* Recorta la imagen si es necesario para que encaje perfectamente */
+}
+
+/* Botones para cambiar de imagen */
+.carousel-buttons {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+/* Botón del carrusel */
+.carousel-btn {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-btn:hover,
+.carousel-btn.active {
+  background-color: white;
+}
+
+
+
+/* destacado section */
+
+.destacadas-section {
+    background-color: #fff;
+    padding: 0px;
+    padding-bottom:60px;
+  }
+  
+  .destacadas-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 2px;
+    margin-bottom: 70px;
+    background-color: #ff0000;
+    padding: 50px;
+    color: #f4f4f4;
+  }
+  
+  .destacadas-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+
+  }
+  
+  .destacada-item {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px 0px 10px 0px;
+
+
+  }
+  
+  .destacada-image {
+    width: 230px;
+    height: 200px;
+    object-fit:contain;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .destacada-title {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #ff0000;
+    padding: 15px 0;
+    margin: 5px 5px 5px 5px ;
+  }
+
+
+  @media screen and (max-width: 768px){
+    .destacadas-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+  }
+
+ /* mapa */
+
+
+
+ .contact-info {
+    display: flex;
+    justify-content:center;
+    padding: 20px;
+    margin-bottom: 50px;
+
+  }
+
+  .mapa {
+    align-items: center;
+  }
+
+  .mapa iframe{
+    width: 600px;
+    height: 400px;
+    margin-left: 50px;
+  }
+
+  .contact-info h2{
+    color:#ff0000;
+    
+  }
+
+  .contact-info p{
+    font-size: 20px ;
+    color: #4a4a4a;
+
+  }
+
+  .contact-p, #contact-p {
+    margin-top: 50px;
+  }
+
+  .whatsapp-button.contact-wpp-button {
+    padding: 15px 35px;
+    margin-top: 30px;
+  }
+
+  .contact-p.number-wpp {
+    color: #1DA851;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  
+
+  .mapa h2 {
+    text-align: center;
+  }
+  
+  .info-contacto {
+    text-align: center;
+    padding: 0px 50px 50px 50px;
+  }
+
+  @media screen and (max-width: 768px){
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0px;
+      padding: 0px;
+  
+    }
+
+    .mapa iframe{
+      width: 90%;
+      padding: 0px;
+      margin-left: 25px;
+  
+    }
+
+    .info-contacto{
+      margin-top: 50px;
+    }
+
+  }
+
+  /* footer */
+
+  .footer-container {
+    /* Estilos para el contenedor principal del footer */
+    background-color: #1e1e1e;
+    display: flex;
+    justify-content:center;
+    padding: 30px;
+  }
+  
+  .footer-nav {
+    /* Estilos para la navegación */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    padding: 0;
+    margin: 0px 60px ;
+  }
+  
+
+  
+  .footer-link {
+    /* Estilos para cada enlace */
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-list li{
+    margin-bottom: 10px; /* Espacio entre enlaces */
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: 768px){
+    .footer-container{
+      flex-direction: column;
+    }
+    .logo-footer{
+      margin-left: 30%;
+    }
+
+    .footer-nav{
+      margin-top: 20px;
+      margin-left: 40%;
+    }
+
+  }
+
